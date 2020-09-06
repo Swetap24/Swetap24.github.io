@@ -1197,7 +1197,81 @@ funded by BMGF.</p>
             }
             return b.scrollbarSize
         }
+    }, a.magnificPopup = {
+        instance: null,
+        proto: t.prototype,
+        modules: [],
+        open: function(b, c) {
+            return A(),
+            b = b ? a.extend(!0, {}, b) : {},
+            b.isObj = !0,
+            b.index = c || 0,
+            this.instance.open(b)
+        },
+        close: function() {
+            return a.magnificPopup.instance && a.magnificPopup.instance.close()
+        },
+        registerModule: function(b, c) {
+            c.options && (a.magnificPopup.defaults[b] = c.options),
+            a.extend(this.proto, c.proto),
+            this.modules.push(b)
+        },
+        defaults: {
+            disableOn: 0,
+            key: null,
+            midClick: !1,
+            mainClass: "",
+            preloader: !0,
+            focus: "",
+            closeOnContentClick: !1,
+            closeOnBgClick: !0,
+            closeBtnInside: !0,
+            showCloseBtn: !0,
+            enableEscapeKey: !0,
+            modal: !1,
+            alignTop: !1,
+            removalDelay: 0,
+            prependTo: null,
+            fixedContentPos: "auto",
+            fixedBgPos: "auto",
+            overflowY: "auto",
+            closeMarkup: '<button title="%title%" type="button" class="mfp-close">&#215;</button>',
+            tClose: "Close (Esc)",
+            tLoading: "Loading...",
+            autoFocusLast: !0
+        }
     },
+    a.fn.magnificPopup = function(c) {
+        A();
+        var d = a(this);
+        if ("string" == typeof c)
+            if ("open" === c) {
+                var e, f = u ? d.data("magnificPopup") : d[0].magnificPopup, g = parseInt(arguments[1], 10) || 0;
+                f.items ? e = f.items[g] : (e = d,
+                f.delegate && (e = e.find(f.delegate)),
+                e = e.eq(g)),
+                b._openClick({
+                    mfpEl: e
+                }, d, f)
+            } else
+                b.isOpen && b[c].apply(b, Array.prototype.slice.call(arguments, 1));
+        else
+            c = a.extend(!0, {}, c),
+            u ? d.data("magnificPopup", c) : d[0].magnificPopup = c,
+            b.addGroup(d, c);
+        return d
+    }
+    ;
+    var C, D, E, F = "inline", G = function() {
+        E && (D.after(E.addClass(C)).detach(),
+        E = null)
+    };
+    a.magnificPopup.registerModule(F, {
+        options: {
+            hiddenClass: "hide",
+            markup: "",
+            tNotFound: "Content not found"
+        },
  proto: {
             initInline: function() {
                 b.types.push(F),
@@ -1691,7 +1765,7 @@ funded by BMGF.</p>
         }
     }),
     A()
-;
+});
 
 </script>
 <!-- JS Plugins -->
