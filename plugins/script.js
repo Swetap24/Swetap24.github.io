@@ -1,8 +1,3 @@
-res.setHeader('Access-Control-Allow-Origin', '*'); // Or restrict to your domain
-res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-
 async function sendToChatGPT() {
     const userInput = document.getElementById('userInput').value;
     const responseContainer = document.getElementById('response');
