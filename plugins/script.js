@@ -1,4 +1,4 @@
-const apiKey = "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"; 
+const apiKey = ""; 
 
 async function sendToChatGPT() {
     const userInput = document.getElementById('userInput').value;
