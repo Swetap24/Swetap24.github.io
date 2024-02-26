@@ -4,7 +4,7 @@ async function sendToChatGPT() {
 
     try {
         // This URL should be replaced with the endpoint of your serverless function
-        const vercelFunctionURL = 'https://your-vercel-project-url.vercel.app/api/chat';
+        const vercelFunctionURL = 'https://swetap24-github-io-sps-projects-261d6490.vercel.app/';
 
         const response = await fetch(vercelFunctionURL, {
             method: "POST",
